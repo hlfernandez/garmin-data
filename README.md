@@ -32,6 +32,6 @@ To do so, call the scripts as follows:
 1. `python3 collect_running_bar_chart_race_data garmin-data/<data-export-id> your@email.here garmin-data/<data-export-id>.csv`
 2. `python3 make_bar_chart_race.py garmin-data/<data-export-id>.csv garmin-data/<data-export-id>.mp4`
 
-<video width="320" height="240" controls>
+<video controls>
   <source src="https://raw.githubusercontent.com/hlfernandez/garmin-data/master/docs/demo_bar_chart_race.mp4" type="video/mp4">
 </video>
