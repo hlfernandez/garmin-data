@@ -1,6 +1,6 @@
 # Garmin Data Analysis
 
-My motivation to create this repository was creating a bar chart race of running shows usage.
+My motivation to create this repository was creating a bar chart race of running shows usage. Currently, it includes scripts for creating other charts like the distribution of run lengths or the summary of weekly kilometers in a year.
 
 ## Garmin Data
 
@@ -35,3 +35,15 @@ To do so, call the scripts as follows:
 <video controls>
   <source src="https://raw.githubusercontent.com/hlfernandez/garmin-data/master/docs/demo_bar_chart_race.mp4" type="video/mp4">
 </video>
+
+## Distribution of run lengths
+
+Creates a histogram with the distribution of the lengths of all running activities: `python3 run_length_distribution.py garmin-data/<data-export-id> your@email.here garmin-data/run_length_distribution_$(date -u +%Y.%m.%d).png`
+
+![Distribution of run lengths](docs/run_length_distribution.png "Distribution of run lengths")
+
+## Summary of weekly kilometers in a year
+
+Creates a histogram with the weekly kilometers in a given year: `YEAR=2023 && python3 summarize_weekly_kilometers_by_year.py garmin-data/<data-export-id> your@email.here garmin-data/weekly_kilometers_${YEAR}.png`
+
+![Weekly kilometers](docs/weekly_kilometers.png "Weekly kilometers")

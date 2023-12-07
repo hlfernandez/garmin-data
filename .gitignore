@@ -2,4 +2,5 @@ garmin-data
 __pycache__
 .mpypy_cache
 .venv
+*.bak
 .vscode
