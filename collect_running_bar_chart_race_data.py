@@ -20,7 +20,7 @@ if len(sys.argv) == 5:
 path_activities = get_activities_path(input_garmin_data_path, user_mail)
 path_gears = get_gears_path(input_garmin_data_path, user_mail)
 
-activities = act.load_activities(path_activities, 'running')
+activities = act.load_activities(path_activities, ['running', 'treadmill_running'])
 gears = gear.load_gears(path_gears)
 activity_to_gear = gear.load_activity_to_gear(path_gears)
 

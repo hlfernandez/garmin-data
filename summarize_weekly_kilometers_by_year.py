@@ -54,7 +54,10 @@ if len(sys.argv) ==5:
 
 path_activities = get_activities_path(input_garmin_data_path, user_mail)
 
-df = create_weekly_kilometers_dataframe(act.load_activities(path_activities, 'running'), int(input_year))
+df = create_weekly_kilometers_dataframe(
+    act.load_activities(path_activities, ['running', 'treadmill_running']),
+    int(input_year)
+)
 
 """
 plt.figure(figsize=(8, 6))  # Optional: Set the figure size

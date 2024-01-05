@@ -28,7 +28,7 @@ if len(sys.argv) ==4:
 path_activities = get_activities_path(input_garmin_data_path, user_mail)
 
 df = create_run_lengh_dist_dataframe(
-    act.load_activities(path_activities, 'running')
+    act.load_activities(path_activities, ['running', 'treadmill_running'])
 )
 
 bin_edges = [0, 2.5, 5, 7.5, 10, 12.5, 15, 17.5, 20, 22.5, 25]
