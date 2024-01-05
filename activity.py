@@ -34,7 +34,7 @@ class Activity:
         return f'[Activity ID: {self.activity_id}] {self.type} {self.distance_centimeters} (centimeters) on {self.start_time_gmt}'
 
 
-def load_activities(activities_json_path: str, type: str = None) -> list[Activity]:
+def load_activities(activities_json_path: str, activity_type: str = None) -> list[Activity]:
     activities_json = json.load(open(activities_json_path))
 
     activities = []
@@ -42,11 +42,11 @@ def load_activities(activities_json_path: str, type: str = None) -> list[Activit
     for activity_json in activities_json[0]['summarizedActivitiesExport']:
         activities.append(Activity.from_garmin_json(activity_json))
 
-    if type is not None:
-        activities = filter(
-            lambda a: a.get_type() == 'running',
+    if activity_type is not None:
+        activities = list(filter(
+            lambda a: a.get_type() == activity_type,
             activities
-        )
+        ))
 
     return activities
 
