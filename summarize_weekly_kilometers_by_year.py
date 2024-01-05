@@ -21,7 +21,7 @@ def create_weekly_kilometers_dataframe(activities: list[act.Activity], year: int
     current_sum = 0.0
     dfs_to_concat = []
     for a in activities_running_sorted:
-        week_number = a.get_start_time_gmt().strftime("%U")
+        week_number = a.get_start_time_gmt().strftime("%W")
         activity_week = f'{a.get_start_time_gmt().year}-{week_number}'
 
         if current_week != activity_week and current_sum > 0:
