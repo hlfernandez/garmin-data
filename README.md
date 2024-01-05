@@ -29,7 +29,7 @@ This involves two steps:
 2. Using such data to create the bar chart race using the `bar_chart_race` [package](https://github.com/dexplo/bar_chart_race). This is done using the 
 
 To do so, call the scripts as follows:
-1. `python3 collect_running_bar_chart_race_data garmin-data/<data-export-id> your@email.here garmin-data/<data-export-id>.csv`
+1. `python3 collect_running_bar_chart_race_data.py garmin-data/<data-export-id> your@email.here garmin-data/<data-export-id>.csv`
 2. `python3 make_bar_chart_race.py garmin-data/<data-export-id>.csv garmin-data/<data-export-id>.mp4`
 
 A sample result video can be found [here](https://raw.githubusercontent.com/hlfernandez/garmin-data/master/docs/demo_bar_chart_race.mp4).
@@ -37,6 +37,10 @@ A sample result video can be found [here](https://raw.githubusercontent.com/hlfe
 <video controls>
   <source src="https://raw.githubusercontent.com/hlfernandez/garmin-data/master/docs/demo_bar_chart_race.mp4" type="video/mp4">
 </video>
+
+### Filtering by year
+
+The `collect_running_bar_chart_race_data.py` script accepts as a final argument a list of years to filter data (a single string argument with years separated by `;`): `python3 collect_running_bar_chart_race_data.py garmin-data/<data-export-id> your@email.here garmin-data/<data-export-id>.csv 2023;2024`.
 
 ## Distribution of run lengths
 
