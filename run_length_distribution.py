@@ -25,13 +25,13 @@ output_path = None
 if len(sys.argv) ==4:
     output_path = sys.argv[3]
 
-path_activities = get_activities_path(input_garmin_data_path, user_mail)
+activities = act.Activities(input_garmin_data_path, user_mail)
 
 df = create_run_lengh_dist_dataframe(
-    act.load_activities(path_activities, ['running', 'treadmill_running'])
+    activities.load_activities(['running', 'treadmill_running', 'trail_running'])
 )
 
-bin_edges = [0, 2.5, 5, 7.5, 10, 12.5, 15, 17.5, 20, 22.5, 25]
+bin_edges = [0, 2.5, 5, 7.5, 10, 12.5, 15, 17.5, 20, 22.5, 25, 27.5, 30, 32.5, 35, 37.5, 40, 42.5, 45]
 
 """
 # Basic plot

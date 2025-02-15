@@ -52,10 +52,10 @@ output_path = None
 if len(sys.argv) ==5:
     output_path = sys.argv[4]
 
-path_activities = get_activities_path(input_garmin_data_path, user_mail)
+activities = act.Activities(input_garmin_data_path, user_mail)
 
 df = create_weekly_kilometers_dataframe(
-    act.load_activities(path_activities, ['running', 'treadmill_running']),
+    activities.load_activities(['running', 'treadmill_running', 'trail_running']),
     int(input_year)
 )
 
