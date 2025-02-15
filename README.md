@@ -53,3 +53,9 @@ Creates a histogram with the distribution of the lengths of all running activiti
 Creates a histogram with the weekly kilometers in a given year: `YEAR=2023 && python3 summarize_weekly_kilometers_by_year.py garmin-data/<data-export-id> your@email.here garmin-data/weekly_kilometers_${YEAR}.png`
 
 ![Weekly kilometers](docs/weekly_kilometers.png "Weekly kilometers")
+
+## 7-day kilometer track in a year or date range
+
+Creates a line chart where each point represents the accumulated kilometers in the last 7 days in a given year or date range: `RANGE=2024-01-01_2024-08-28 && python3 week_analysis_by_year.py garmin-data/<data-export-id> your@email.here range=${RANGE} garmin-data/week_analysis_range_${RANGE}.png`
+
+![7-day kilometer track](docs/week_analysis.png "7-day kilometer track")
